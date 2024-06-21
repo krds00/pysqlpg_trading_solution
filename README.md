@@ -117,4 +117,10 @@ docker run -p 8000:8000 --env-file .env -v $(pwd)/data:/usr/src/app/data transac
 
 You can now access your FastAPI application at http://localhost:8000/run-main to execute the main function and check result in data/
 
+### Alternatively you can just pull & run it from Dockerhub
+```
+docker pull oanovitskij/transactions_processing-app:latest
+docker run -p 8000:8000 --env-file .env -v $(pwd)/data:/usr/src/app/data oanovitskij/transactions_processing-app:latest
+```
+
 

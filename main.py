@@ -33,7 +33,7 @@ def main() -> None:
         solution_2_df.to_csv('data/solution_2.csv', index=False)
         
         # Left join solutions 1 and 2 on login and save to CSV
-        merged_df = pd.merge(solution_1_df, solution_2_df, on='login', how='left')
+        merged_df = pd.merge(solution_1_df, solution_2_df, on='login', how='outer')
         merged_df.to_csv('data/solution_merged.csv', index=False)
         
         # Solution 3
