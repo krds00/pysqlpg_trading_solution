@@ -59,3 +59,62 @@ The script should generate:
 
 1. A CSV file where each row corresponds to a login, with columns for login, metric from point 1, and metric from point 2.
 2. A CSV file listing all pairs from point 3.
+
+## How to use
+### Clone repo
+```
+gh repo clone krds00/pysqlpg_trading_solution
+```
+
+### File structure
+```
+/pysqlpg_trading_solution
+    ├── main.py 
+    ├── app.py
+    ├── queries.py
+    ├── db.py
+    ├── Dockerfile
+    ├── requirements.txt
+    ├── LICENSE
+    ├── README.md
+    ├── .gitignore
+    ├── .env (should be added, see structure below)
+    └── data/
+```
+### .env File
+
+Create a .env file with the following format and fill in your database credentials:
+```
+DB_HOST=host
+DB_PORT=port
+DB_NAME=name
+DB_USER=user
+DB_PASSWORD=password
+```
+
+### Running App Individually
+```
+uvicorn app:app --host 0.0.0.0 --port 8000
+```
+
+### Running Docker
+
+1. Build the Docker image:
+
+```
+docker build -t transactions_processing-app .
+```
+
+
+2. Run the Docker container:
+
+```
+docker run -p 8000:8000 --env-file .env -v $(pwd)/data:/usr/src/app/data transactions_processing-app
+```
+
+
+3. Access your FastAPI application:
+
+You can now access your FastAPI application at http://localhost:8000/run-main to execute the main function and check result in data/
+
+
