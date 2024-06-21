@@ -12,8 +12,8 @@ The mt4 schema contains the following tables:
 - mt4.trades:
   - ticket: Primary key, transaction identifier
   - login: Client login who made the trade
-  - opentime**: Trade opening time
-  - **closetime: Trade closing time. If not closed, it has a zero timestamp.
+  - opentime: Trade opening time
+  - closetime: Trade closing time. If not closed, it has a zero timestamp.
   - symbol: Symbol, the instrument traded
   - cmd: 0 for buy, 1 for sell
 
